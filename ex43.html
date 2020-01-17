@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Partie II - Chapitre 2 - Exemple 4</title>
+  </head>
+  
+  <body>
+    <div>
+      <p id="myP">Un peu de texte <a>et un lien</a></p>
+    </div>
+
+    <script>
+      var paragraph = document.getElementById('myP');
+      var children  = paragraph.childNodes;
+
+      for (var i = 0, c = children.length; i < c; i++) {
+		  
+        if (children[i].nodeType === 1) { // C'est un élément HTML
+          alert(children[i].firstChild.data);
+        } else { // C'est certainement un noeud textuel
+          alert(children[i].data);
+        }
+		
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Partie II - Chapitre 2 - Exemple 10</title>
+  </head>
+  
+  <body>
+    <div>
+      <p id="myP">Un peu de texte <a>et un lien</a></p>
+    </div>
+    
+    <script>
+      var paragraph    = document.getElementsByTagName('p')[0];
+      var emphasis     = document.createElement('em'),
+          emphasisText = document.createTextNode(' en emphase légère ');
+        
+          emphasis.appendChild(emphasisText);
+        
+      paragraph.insertBefore(emphasis, paragraph.lastChild);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Partie V - Chapitre 4 - Exemple 6</title>
+  </head>
+
+  <body>
+
+    <input id="file" type="file" />
+    <br /><br />
+    <progress id="progress"></progress>
+
+    <script>
+
+    var fileInput = document.querySelector('#file'),
+        progress = document.querySelector('#progress');
+
+    fileInput.addEventListener('change', function() {
+
+        var xhr = new XMLHttpRequest();
+
+        xhr.open('POST', 'upload.html');
+
+        xhr.upload.addEventListener('progress', function(e) {
+            progress.value = e.loaded;
+            progress.max = e.total;
+        }, false);
+
+        xhr.addEventListener('load', function() {
+            alert('Upload terminé !');
+        }, false);
+
+        var form = new FormData();
+        form.append('file', fileInput.files[0]);
+
+        xhr.send(form);
+
+    }, false);
+
+    </script>
+
+  </body>
+</html>

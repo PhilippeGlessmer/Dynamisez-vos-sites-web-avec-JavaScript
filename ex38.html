@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Partie II - Chapitre 1 - Exemple 3</title>
+  </head>
+  
+  <body>
+    <a id="myLink" href="http://www.un_lien_quelconque.com">Un lien modifié dynamiquement</a>
+
+    <script>
+      var link = document.getElementById('myLink');
+      var href = link.href;
+
+      alert(href);
+
+      link.href = 'http://www.siteduzero.com';
+    </script>
+  </body>
+</html>

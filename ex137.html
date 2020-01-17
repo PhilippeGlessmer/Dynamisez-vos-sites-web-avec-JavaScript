@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Partie V - Chapitre 4 - Exemple 1</title>
+  </head>
+
+  <body>
+
+    <input id="file" type="file" />
+
+    <script>
+      
+    document.getElementById('file').onchange = function() {
+
+        alert(this.files[0].name);
+
+    };
+
+    </script>
+
+  </body>
+</html>

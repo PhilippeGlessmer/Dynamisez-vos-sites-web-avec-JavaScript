@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Partie II - Chapitre 3 - Exemple 12</title>
+</head>
+<body>
+
+<span id="clickme">Cliquez-moi !</span>
+
+<script>
+    var clickme = document.getElementById('clickme');
+
+    clickme.addEventListener('click', function(e) {
+        e.target.innerHTML = 'Vous avez cliqué !';
+    }, false);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Partie V - Chapitre 3 - Exemple 9</title>
+    <style>body { background: black; color: white; font-family: sans-serif; } canvas { background: white; }</style>
+  </head>
+
+  <body>
+
+    <canvas id="canvas" width="150" height="150">
+      <p>Désolé, votre navigateur ne supporte pas Canvas. Mettez-vous à jour</p>
+    </canvas>
+	
+    <p>
+      Image source :<br />
+      <img src="plush.png" alt="Peluche Zozor" id="plush" />
+    </p>
+	
+    <script>
+      
+      window.onload = function() {
+          var canvas  = document.querySelector('#canvas');
+          var context = canvas.getContext('2d');
+		  
+          var zozor = document.querySelector('#plush');
+              
+		  context.drawImage(zozor, 99, 27, 100, 100, 25, 25, 100, 100);
+      };
+
+    </script>
+  </body>
+</html>

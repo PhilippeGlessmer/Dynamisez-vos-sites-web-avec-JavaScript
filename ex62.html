@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Partie II - Chapitre 3 - Exemple 13</title>
+    
+    <style>
+      #parent1 {
+        position: absolute;
+        top: 100px; left: 50px;
+        padding: 40px 0 0 25px;
+        width: 175px; height: 160px;
+        background-color: red;
+        color: white;
+      }
+      
+      #child1, #child2 {
+        position: absolute;
+        padding-top: 27px;
+        width: 80px; height: 53px;
+        background-color: blue;
+        text-align: center;
+      }
+      
+      #child1 {
+        top: 15px; right: 15px;
+      }
+      
+      #child2 {
+        bottom: 15px; left: 15px;
+      }
+    </style>
+  </head>
+  
+  <body>
+    <p id="result"></p>
+    
+    <div id="parent1">
+      Parent
+      <div id="child1">Enfant N°1</div>
+      <div id="child2">Enfant N°2</div>
+    </div>
+    
+    <!-- HTML END // STARTING JAVASCRIPT -->
+    
+    <script>
+      var parent1 = document.getElementById('parent1'),
+          result  = document.getElementById('result');
+      
+      parent1.addEventListener('mouseover', function(e) {
+          result.innerHTML = "L'élément déclencheur de l'événement \"mouseover\" possède l'ID : " + e.target.id;
+      }, false);
+    </script>
+  </body>
+</html>

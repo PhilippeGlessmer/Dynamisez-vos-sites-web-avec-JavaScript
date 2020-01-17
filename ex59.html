@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Partie II - Chapitre 3 - Exemple 9</title>
+  </head>
+  
+  <body>
+    <span id="clickme">Cliquez-moi !</span>
+
+    <script>
+
+      var el = document.getElementById('clickme');
+
+      // Premier événement click
+        el.addEventListener('click', function() {
+            alert("Et de un !");
+        }, false);
+      
+      // Deuxième événement click
+        el.addEventListener('click', function() {
+            alert("Et de deux !");
+        }, false);
+
+    </script>
+  </body>
+</html>

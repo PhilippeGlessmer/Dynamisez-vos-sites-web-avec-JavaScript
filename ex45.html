@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Partie II - Chapitre 2 - Exemple 6</title>
+  </head>
+  
+  <body>
+    <div>
+      <p id="myP">Un peu de texte <a>et un lien</a></p>
+    </div>
+
+    <script>
+      var paragraph = document.getElementById('myP');
+      var child     = paragraph.lastChild; // On prend le dernier enfant
+
+      while (child) {
+		
+        if (child.nodeType === 1) { // C'est un élément HTML
+          alert(child.firstChild.data);
+        } else { // C'est certainement un noeud textuel
+          alert(child.data);
+        }
+		
+        child = child.previousSibling; // A chaque tour de boucle, on prend l'enfant précédent
+	
+      }
+    </script>
+  </body>
+</html>

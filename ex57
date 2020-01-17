@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Partie II - Chapitre 3 - Exemple 7</title>
+  </head>
+  
+  <body>
+    <span id="clickme">Cliquez-moi !</span>
+
+    <script>
+
+      var element = document.getElementById('clickme');
+
+      element.onclick = function() {
+          alert("Vous m'avez cliqué !");
+      };
+
+    </script>
+  </body>
+</html>

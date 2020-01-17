@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Partie III - Chapitre 9 - Exemple 1</title>
+</head>
+
+<body>
+
+	<pre>function Img(src) {
+
+    var obj = this; // Nous faisons une petite référence vers notre objet Img. Cela nous facilitera la tâche.
+    
+    this.originalImg = new Image(); // On instancie l'objet original, le Wrapper servira alors d'intermédiaire.
+    
+    this.complete = false;
+    this.onload = function() {}; // Voici l'événement que les développeurs pourront modifier.
+    
+    this.originalImg.onload = function() {
+
+        obj.complete = true; // L'image est chargée !
+        obj.onload(); // On exécute l'événement éventuellement spécifié par le développeur.
+
+    };
+
+    if (src) {
+        this.originalImg.src = src; // Si elle est spécifiée, on défini alors la propriété src.
+    }
+    
+}
+
+Img.prototype.set = function(name, value) {
+
+    var allowed = ['width', 'height', 'src'], // On spécifie les propriétés dont on autorise la modification.
+        wrapperProperties = ['complete', 'onload'];
+    
+    if (allowed.indexOf(name) != -1) {
+        this.originalImg[name] = value; // Si la propriété est autorisée alors on la modifie.
+    }
+
+    else if (wrapperProperties.indexOf(name) != -1) {
+        this[name] = value; // Ici, la propriété appartient au wrapper et non pas à l'objet original.
+    }
+
+};
+
+Img.prototype.get = function(name) {
+
+    // Si la propriété n'existe pas sur le Wrapper, on essaye alors sur l'objet original :
+    return typeof this[name] != 'undefined' ? this[name] : this.originalImg[name];
+
+};
+
+var myImg = new Img(); // On crée notre objet Img.
+
+alert('complete : ' + myImg.get('complete')); // Vérification de la propriété complete : elle est bien à false.
+
+myImg.set('onload', function() { // Affichage de diverses informations une fois l'image chargée.
+    alert(
+        'complete : ' + this.get('complete') + '\n' +
+        'width : ' + this.get('width') + ' px\n' +
+        'height : ' + this.get('height') + ' px'
+    );
+});
+
+myImg.set('src', 'http://www.siteduzero.com/uploads/fr/ftp/javascript/part3/chap9/img.png'); // On spécifie l'adresse de l'image.
+</pre>
+
+    <script>
+
+        function Img(src) {
+
+            var obj = this; // Nous faisons une petite référence vers notre objet Img. Cela nous facilitera la tâche.
+          
+            this.originalImg = new Image(); // On instancie l'objet original, le Wrapper servira alors d'intermédiaire.
+          
+            this.complete = false;
+            this.onload = function() {}; // Voici l'événement que les développeurs pourront modifier.
+          
+            this.originalImg.onload = function() {
+
+                obj.complete = true; // L'image est chargée !
+                obj.onload(); // On exécute l'événement éventuellement spécifié par le développeur.
+
+            };
+
+            if (src) {
+                this.originalImg.src = src; // Si elle est spécifiée, on défini alors la propriété src.
+            }
+          
+        }
+
+        Img.prototype.set = function(name, value) {
+
+            var allowed = ['width', 'height', 'src'], // On spécifie les propriétés dont on autorise la modification.
+                wrapperProperties = ['complete', 'onload'];
+          
+            if (allowed.indexOf(name) != -1) {
+                this.originalImg[name] = value; // Si la propriété est autorisée alors on la modifie.
+            }
+
+            else if (wrapperProperties.indexOf(name) != -1) {
+                this[name] = value; // Ici, la propriété appartient au wrapper et non pas à l'objet original.
+            }
+
+        };
+
+        Img.prototype.get = function(name) {
+
+            // Si la propriété n'existe pas sur le Wrapper, on essaye alors sur l'objet original :
+            return typeof this[name] != 'undefined' ? this[name] : this.originalImg[name];
+
+        };
+
+        var myImg = new Img(); // On crée notre objet Img.
+
+        alert('complete : ' + myImg.get('complete')); // Vérification de la propriété complete : elle est bien à false.
+
+        myImg.set('onload', function() { // Affichage de diverses informations une fois l'image chargée.
+            alert(
+                'complete : ' + this.get('complete') + '\n' +
+                'width : ' + this.get('width') + ' px\n' +
+                'height : ' + this.get('height') + ' px'
+            );
+        });
+
+        myImg.set('src', 'http://www.siteduzero.com/uploads/fr/ftp/javascript/part3/chap9/img.png'); // On spécifie l'adresse de l'image.
+
+    </script>
+
+</body>
+</html>

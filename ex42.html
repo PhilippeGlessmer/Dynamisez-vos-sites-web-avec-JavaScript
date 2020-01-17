@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Partie II - Chapitre 2 - Exemple 3</title>
+  </head>
+  
+  <body>
+    <div>
+      <p id="myP">Un peu de texte, <a>un lien</a> et <strong>une portion en emphase</strong></p>
+    </div>
+    
+    <script>
+      var paragraph = document.getElementById('myP');
+      var first = paragraph.firstChild;
+      var last  = paragraph.lastChild;
+
+      alert(first.nodeValue);
+      alert(last.firstChild.data);
+    </script>
+  </body>
+</html>

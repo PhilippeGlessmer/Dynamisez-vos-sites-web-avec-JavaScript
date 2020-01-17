@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Partie III - Chapitre 6 - Exemple 3</title>
+</head>
+
+<body>
+
+    <img id="myImg" src="./img.png" style="opacity: 1" />
+
+    <script>
+        var myImg = document.getElementById('myImg');
+
+        function anim() {
+
+            var s = myImg.style,
+                result = s.opacity = parseFloat(s.opacity) - 0.1; // N'oubliez pas de parser vos valeurs !
+         
+            if (result > 0.2) {
+                setTimeout(anim, 50); // La fonction anim() fait appel à elle-même si elle n'a pas terminé son travail
+            }
+
+        }
+
+        anim(); // Et on lance la première phase de l'animation !
+    </script>
+
+</body>
+</html>

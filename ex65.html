@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Partie II - Chapitre 3 - Exemple 16</title>
+    
+    <style>
+      #parent1, #parent2 {
+        position: absolute;
+        top: 100px; left: 50px;
+        padding: 40px 0 0 25px;
+        width: 175px; height: 160px;
+        background-color: red;
+        color: white;
+      }
+      
+      #parent2 {
+        left: 350px;
+      }
+      
+      #child1, #child2 {
+        position: absolute;
+        right: 20px; bottom: 20px;
+        padding-top: 27px;
+        width: 80px; height: 53px;
+        background-color: blue;
+        text-align: center;
+      }
+    </style>
+  </head>
+  
+  <body>
+    <p id="result"></p>
+
+    <div id="parent1">
+      Parent N°1<br />
+      Mouseover sur l'enfant
+      <div id="child1">Enfant N°1</div>
+    </div>
+    
+    <div id="parent2">
+      Parent N°2<br />
+      Mouseout sur l'enfant
+      <div id="child2">Enfant N°2</div>
+    </div>
+
+    <!-- HTML END // STARTING JAVASCRIPT -->
+
+    <script>
+      var child1 = document.getElementById('child1'),
+          child2 = document.getElementById('child2'),
+          result = document.getElementById('result');
+      
+      child1.addEventListener('mouseover', function(e) {
+          result.innerHTML = "L'élément quitté juste avant que le curseur n'entre sur l'enfant N°1 est : " + e.relatedTarget.id;
+      }, false);
+      
+      child2.addEventListener('mouseout', function(e) {
+          result.innerHTML = "L'élément survolé juste après que le curseur ait quitté l'enfant N°2 est : " + e.relatedTarget.id;
+      }, false);
+    </script>
+  </body>
+</html>

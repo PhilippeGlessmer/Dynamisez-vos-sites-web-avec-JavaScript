@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Partie II - Chapitre 2 - Exemple 9</title>
+  </head>
+  
+  <body>
+    <div>
+      <p id="myP">Un peu de texte <a>et un lien</a></p>
+    </div>
+    
+    <script>
+      var link = document.getElementsByTagName('a')[0];
+      var newLabel= document.createTextNode('et un hyperlien');
+
+      link.replaceChild(newLabel, link.firstChild);
+    </script>
+  </body>
+</html>

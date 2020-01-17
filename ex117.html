@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Partie V - Chapitre 2 - Exemple 1</title>
+    <link rel="stylesheet" type="text/css" href="player.css" />
+  </head>
+
+  <body>
+
+    <div id="divPlayer">
+	  <h1>Lite-Player</h1>
+	
+      <audio id="audioPlayer">
+	    <source src="hype_home.ogg"></source>
+	    <source src="hype_home.mp3"></source>
+      </audio>
+
+      <button class="control" onclick="play('audioPlayer', this)">Play</button>
+      <button class="control" onclick="resume('audioPlayer')">Stop</button>
+	</div>
+
+	<script>
+      
+      function play(idPlayer, control) {
+          var player = document.querySelector('#' + idPlayer);
+	
+          if (player.paused) {
+              player.play();
+              control.textContent = 'Pause';
+          } else {
+              player.pause();	
+              control.textContent = 'Play';
+          }
+      }
+
+      function resume(idPlayer) {
+          var player = document.querySelector('#' + idPlayer);
+	
+          player.currentTime = 0;
+          player.pause();
+      }
+
+    </script>
+	
+	<footer>Musique libre <em>Home</em> du groupe <a href="https://www.myspace.com/hypemusic">Hype</a>.</footer>
+  </body>
+</html>

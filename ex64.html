@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Partie II - Chapitre 3 - Exemple 15</title>
+  </head>
+  
+  <body>
+    <div id="position"></div>
+
+    <script>
+      var position = document.getElementById('position');
+      
+      document.addEventListener('mousemove', function(e) {
+          position.innerHTML = 'Position X : ' + e.clientX + 'px<br />Position Y : ' + e.clientY + 'px';
+      }, false);
+    </script>
+  </body>
+</html>

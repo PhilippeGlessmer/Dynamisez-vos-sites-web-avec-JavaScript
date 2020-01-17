@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Partie IV - Chapitre 3 - Exemple 2</title>
+
+    <style>
+      iframe {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <form id="myForm" method="post" action="request.php" target="myFrame"> 
+        <div>
+            <label for="nick">Votre pseudo :</label>
+            <input type="text" id="nick" name="nick" />
+
+            <input type="button" value="Envoyer" onclick="sendForm();" />
+        </div>
+    </form>
+
+    <iframe src="#" name="myFrame" id="myFrame"></iframe>
+
+    <script>
+
+    function sendForm() {
+        var nick = document.getElementById("nick").value;
+
+        if (nick) { // Si c'est OK
+            document.getElementById("myForm").submit(); // On envoie le formulaire
+        }
+    }
+
+    function receiveData(data) {
+        alert('Votre pseudo est "' + data + '"');
+    }
+
+    </script>
+
+  </body>
+</html>

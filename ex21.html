@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Partie I - Chapitre 6 - Exemple 5</title>
+  </head>
+  
+  <body>
+<pre>var message = 'Ici la variable globale !';
+
+function showMsg() {
+    var message = 'Ici la variable locale !';
+    alert(message);
+}
+
+showMsg();
+
+alert(message);
+</pre>
+    
+    <!-- HTML END // STARTING JAVASCRIPT -->
+    
+    <script>
+        var message = 'Ici la variable globale !';
+
+        function showMsg() {
+            var message = 'Ici la variable locale !';
+            alert(message);
+        }
+
+        showMsg();
+
+        alert(message);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Annexe - Chapitre 2 - Exemple 6</title>
+  </head>
+
+  <body>
+
+    <script type="text/javascript">
+
+    var display = (function() {
+
+        var myVar = 0; // Déclaration de la variable pseudo-statique
+
+        return function(value) {
+
+            if(typeof value != 'undefined') {
+                myVar = value;
+            }
+
+            alert(myVar);
+
+        };
+    
+    })();
+
+    display(); // Affiche : 0
+    display(42); // Affiche : 42
+    display(); // Affiche : 42
+
+    </script>
+
+  </body>
+</html>

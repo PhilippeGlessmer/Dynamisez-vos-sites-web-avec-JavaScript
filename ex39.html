@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Partie II - Chapitre 1 - Exemple 4</title>
+  </head>
+  
+  <body>
+    <a id="myLink" class="external red u" href="http://www.un_lien_quelconque.com">Un lien avec plusieurs classes</a>
+
+    <script>
+      var classes    = document.getElementById('myLink').className;
+      var classesNew = [];
+      classes = classes.split(' ');
+
+      for (var i = 0, c = classes.length; i < c; i++) {
+          if (classes[i]) {
+             classesNew.push(classes[i]);
+          }
+      }
+
+      alert(classesNew);
+    </script>
+  </body>
+</html>

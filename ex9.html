@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Partie I - Chapitre 4 - Exemple 6</title>
+  </head>
+  
+  <body>
+<pre>var startMessage = 'Votre catégorie : ',
+    endMessage,
+    adult = confirm('Êtes-vous majeur ?');
+
+if (adult) { // la variable "adult" contient un Booléen, on peut donc directement la soumettre à l'instruction if sans opérateur conditionnelle.
+    endMessage = '18+';
+}
+
+else {
+    endMessage = '-18';
+}
+
+alert(startMessage + endMessage);
+</pre>
+    
+    <!-- HTML END // STARTING JAVASCRIPT -->
+    
+    <script>
+        var startMessage = 'Votre catégorie : ',
+            endMessage,
+        adult = confirm('Êtes-vous majeur ?');
+        
+        if (adult) { // la variable "adult" contient un Booléen, on peut donc directement la soumettre à l'instruction if sans opérateur conditionnelle.
+            endMessage = '18+';
+        }
+        
+        else {
+            endMessage = '-18';
+        }
+        
+        alert(startMessage + endMessage);
+    </script>
+  </body>
+</html>
